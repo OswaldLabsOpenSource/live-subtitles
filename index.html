@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <link rel="stylesheet" href="styles.scss">
   </head>
@@ -8,6 +8,18 @@
     <button>Start speaking</button>
     <p class="final"></p>
     <p class="interim"></p>
+    <section>
+      <label for="langs">Translate</label>
+      <select id="langs" onchange="window.agastya.api('translate', this.value)">
+        <option selected>Select a language</option>
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select>
+    </section>
+    <footer>
+      <p><a href="https://github.com/OswaldLabsOpenSource/live-subtitles" target="_blank" rel="noopener noreferrer">View source on GitHub</a></p>
+    </footer>
     <script src="live-subtitles.ts"></script>
+    <script src="https://platform-beta.oswaldlabs.com/v1/agastya/load/hackathon.js" async defer></script>
   </body>
 </html>

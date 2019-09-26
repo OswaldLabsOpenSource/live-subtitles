@@ -10,9 +10,25 @@ body {
   text-align: center;
 }
 
+a {
+  color: inherit;
+  text-underline-position: under;
+}
+
 button {
   font: inherit;
   border: 1px solid #ddd;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
+}
+
+section {
+  margin: 5rem 0;
+}
+
+select {
+  font: inherit;
+  height: 2rem;
+  margin-left: 0.5rem;
+  display: inline-block;
 }

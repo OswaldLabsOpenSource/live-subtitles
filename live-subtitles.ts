@@ -8,9 +8,12 @@ if (startButton) {
   recognition.lang = "en-US";
   startButton.addEventListener("click", () => {
     try {
-      recognition.start();
+      if (active)
+        recognition.stop();
+      else
+        recognition.start();
     } catch (error) {
-      recognition
+      recognition.stop();
     }
   });
 }
