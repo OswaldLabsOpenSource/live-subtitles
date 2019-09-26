@@ -8,6 +8,7 @@ html {
 body {
   background-color: whitesmoke;
   text-align: center;
+  margin: 2rem 1rem;
 }
 
 a {
@@ -20,6 +21,10 @@ button {
   border: 1px solid #ddd;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
+  &.active--false {
+    background-color: darkslateblue;
+    color: #fff;
+  }
 }
 
 section {

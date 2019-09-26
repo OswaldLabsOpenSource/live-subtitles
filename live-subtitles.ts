@@ -21,6 +21,9 @@ if (startButton) {
 const update = () => {
   if (startButton) {
     startButton.innerHTML = `${active ? 'Stop' : 'Start'} speaking`;
+    startButton.classList.remove("active--false");
+    startButton.classList.remove("active--true");
+    startButton.classList.add(`active--${active}`);
   }
 };
 
