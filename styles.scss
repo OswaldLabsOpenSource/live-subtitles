@@ -18,8 +18,11 @@ a {
 
 button {
   font: inherit;
+  color: inherit;
+  box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
+  background-color: #fff;
   border-radius: 2rem;
   &.active--false {
     background-color: darkslateblue;
@@ -28,6 +31,12 @@ button {
   &.mine--false {
     display: none !important;
   }
+}
+
+footer button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  margin-right: 1rem;
 }
 
 section {
@@ -45,5 +54,8 @@ select {
   body {
     background-color: rgb(10, 10, 10);
     color: rgba(255, 255, 255, 0.9);
+  }
+  button {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
