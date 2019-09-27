@@ -25,6 +25,9 @@ button {
     background-color: darkslateblue;
     color: #fff;
   }
+  &.mine--false {
+    display: none !important;
+  }
 }
 
 section {
