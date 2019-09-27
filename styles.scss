@@ -18,7 +18,7 @@ a {
 
 button {
   font: inherit;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   &.active--false {
@@ -36,4 +36,11 @@ select {
   height: 2rem;
   margin-left: 0.5rem;
   display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(10, 10, 10);
+    color: rgba(255, 255, 255, 0.9);
+  }
 }
