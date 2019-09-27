@@ -11,19 +11,26 @@
     <p class="transcript">
       Text will appear here in real-time as someone starts talking.
     </p>
+    <noscript>
+      <p>Unfortunately, JavaScript is required to use this app.</p>
+    </noscript>
     <section>
       <label for="langs">Translate</label>
       <select id="langs">
         <option selected>Select a language</option>
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
+        <option value="en"><span aria-hidden="true">(EN) </span>English</option>
+        <option value="es"><span aria-hidden="true">(ES) </span>Spanish</option>
+        <option value="fr"><span aria-hidden="true">(FR) </span>French</option>
+        <option value="nl"><span aria-hidden="true">(NL) </span>Dutch</option>
+        <option value="de"><span aria-hidden="true">(DE) </span>German</option>
+        <option value="hi"><span aria-hidden="true">(HI) </span>Hindi</option>
         <option value="more">More languages</option>
       </select>
     </section>
     <footer>
-      <button onclick="window.agastya.open()">Accessibility settings</button>
+      <button onclick="window.agastya.open()">Accessibility</button>
       <button class="share">Share</button>
-      <a href="https://github.com/OswaldLabsOpenSource/live-subtitles" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+      <a href="https://github.com/OswaldLabsOpenSource/live-subtitles" target="_blank" rel="noopener noreferrer">GitHub</a>
     </footer>
     <script src="live-subtitles.ts"></script>
     <script src="https://platform-beta.oswaldlabs.com/v1/agastya/load/hackathon.js" async defer></script>

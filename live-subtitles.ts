@@ -42,11 +42,9 @@ if (startButton) {
 const update = () => {
   if (startButton) {
     startButton.innerHTML = `${active ? 'Stop' : 'Start'} speaking`;
-    startButton.classList.remove("active--false");
-    startButton.classList.remove("active--true");
+    startButton.classList.remove("active--false", "active--true");
     startButton.classList.add(`active--${active}`);
-    startButton.classList.remove("mine--false");
-    startButton.classList.remove("mine--true");
+    startButton.classList.remove("mine--false", "mine--true");
     startButton.classList.add(`mine--${isMine}`);
   }
   if (!isMine) return;
@@ -91,11 +89,12 @@ interface Agastya {
 }
 const translator = document.getElementById("langs") as HTMLSelectElement;
 translator.addEventListener("change", () => {
+  const agastyaApi = ((window as any).agastya as Agastya);
   try {
     if (translator.value === "more")
-      ((window as any).agastya as Agastya).api("translate", translator.value);
+      agastyaApi.api("translate", translator.value);
     else
-      ((window as any).agastya as Agastya).open("/pages/translate");
+      agastyaApi.open("/pages/translate");
   } catch (error) {
     alert("We're still loading the translation functionality...");
   }
