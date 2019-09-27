@@ -69,10 +69,9 @@ recognition.addEventListener("result", event => {
       iTranscript += event.results[i][0].transcript;
     }
   }
-  const final = document.querySelector(".final");
-  if (final) final.innerHTML = fTranscript;
-  const interim = document.querySelector(".interim");
-  if (interim) interim.innerHTML = iTranscript;
+  const transcript = `${fTranscript} ${iTranscript}`;
+  const p = document.querySelector("p");
+  if (p) p.innerHTML = transcript;
   update();
 });
 recognition.addEventListener("error", event => {
