@@ -100,3 +100,10 @@ translator.addEventListener("change", () => {
     alert("We're still loading the translation functionality...");
   }
 });
+
+const sharer = document.querySelector(".share");
+if (sharer) {
+  sharer.addEventListener("click", () => {
+    // Open the native share sheet (read docs when I'm online)
+  });
+}
