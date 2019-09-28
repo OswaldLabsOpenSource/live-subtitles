@@ -92,9 +92,9 @@ translator.addEventListener("change", () => {
   const agastyaApi = ((window as any).agastya as Agastya);
   try {
     if (translator.value === "more")
-      agastyaApi.api("translate", translator.value);
+      agastyaApi.open("/modes/translate");
     else
-      agastyaApi.open("/pages/translate");
+      agastyaApi.api("translate", translator.value);
   } catch (error) {
     alert("We're still loading the translation functionality...");
   }
