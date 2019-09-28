@@ -3,6 +3,15 @@ recognition.continuous = true;
 recognition.interimResults = true;
 let active = false;
 
+import * as firebase from "firebase/app";
+import "firebase/database";
+const firebaseConfig = {
+  apiKey: "AIzaSyD7n1YDWmEB3oX9B6NF51Gwaesjd4JoPyo",
+  authDomain: "live-subtitles-web.firebaseapp.com",
+  databaseURL: "https://live-subtitles-web.firebaseio.com"
+};
+firebase.initializeApp(firebaseConfig);
+
 const parts = window.location.href.split("#");
 if (parts.length === 1) {
   const SLUG = Math.random().toString(36).slice(2);
@@ -48,7 +57,6 @@ const update = () => {
     startButton.classList.add(`mine--${isMine}`);
   }
   if (!isMine) return;
-  // Send date to Firebase
 };
 
 recognition.addEventListener("start", event => {
@@ -68,8 +76,7 @@ recognition.addEventListener("result", event => {
     }
   }
   const transcript = `${fTranscript} ${iTranscript}`;
-  const p = document.querySelector("p");
-  if (p) p.innerHTML = transcript;
+  firebase.database().ref("text").set(transcript);
   update();
 });
 recognition.addEventListener("error", event => {
@@ -114,3 +121,9 @@ if (sharer) {
     }
   });
 }
+
+const ref = firebase.database().ref("text");
+ref.on("value", function(snapshot) {
+  const p = document.querySelector("p");
+  if (p) p.innerHTML = snapshot.val();
+});
