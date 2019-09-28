@@ -103,6 +103,14 @@ translator.addEventListener("change", () => {
 const sharer = document.querySelector(".share");
 if (sharer) {
   sharer.addEventListener("click", () => {
-    // Open the native share sheet (read docs when I'm online)
+    if ((navigator as any).share) {
+      (navigator as any).share({
+          title: "Live Subtitles",
+          text: "Follow live captions",
+          url: location.href,
+      })
+        .then(() => {})
+        .catch(() => {})
+    }
   });
 }
